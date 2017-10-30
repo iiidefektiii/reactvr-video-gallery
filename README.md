@@ -13,11 +13,11 @@ cd C:\Users\userxxxx\Documents\reactvr_projects\reactvr-video-gallery
 ```
 Install the Gaze-Button module
 ```
-npm i –save react-vr-gaze-button
+npm i --save react-vr-gaze-button
 ```
 Once installed install the Simple-Raycaster module
 ```
-npm i – save simple-raycaster
+npm i --save simple-raycaster
 ```
 Once these are installed replace these files in your repository to get going with Video-Gallery
 ```
