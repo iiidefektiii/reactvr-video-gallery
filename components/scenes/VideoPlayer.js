@@ -1,18 +1,13 @@
 import React from 'react';
 import
 {
-  AppRegistry,
   asset,
   VideoPano,
   View,
-  VrButton,
   MediaPlayerState,
   VideoControl
 } from 'react-vr';
-
-const video1 = [asset('360_videos/puppies.webm')];
-const video2 = [asset('360_videos/kittens.webm')];
-const video3 = [asset('360_videos/monkeys.webm')];
+import MyClass from './var/SceneInfo';
 
 class VideoPlayer extends React.Component
 {
@@ -21,8 +16,7 @@ class VideoPlayer extends React.Component
       	super()
       	this.state =
       	{
-	        buttonIsClicked: false,
-	        videoSrc: video1,
+	        videoSrc: [asset(MyClass.currentVideo)],
 	        playerState: new MediaPlayerState({ autoPlay: true, muted: true }),
       	}; 
     }

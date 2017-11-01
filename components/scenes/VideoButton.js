@@ -14,36 +14,33 @@ import
   VideoControl
 } from 'react-vr';
 import GazeButton from 'react-vr-gaze-button';
+import MyClass from './var/SceneInfo';
 
-const mainmenu = [asset('360_videos/main-menu.webm')];
-const video1 = [asset('360_videos/puppies.webm')];
-const video2 = [asset('360_videos/kittens.webm')];
-const video3 = [asset('360_videos/monkeys.webm')];
+class VideoButton extends React.Component {
+  constructor() {
+    super()
+      this.state = {
+        buttonIsClicked: false,
+        scene: 1,
+        playerState: new MediaPlayerState({ autoPlay: true, muted: true }),
+      }; 
+  }
 
-class VideoButton extends React.Component
-{
-    constructor()
-    {
-      	super()
-      	this.state =
-      	{
-	        buttonIsClicked: false,
-	        src: mainmenu,
-	        playerState: new MediaPlayerState({ autoPlay: true, muted: true }),
-      	}; 
-    }
-
-
+  CurrentScene(myScene, video, id) {
+    MyClass.toggleSrc(myScene, video);
+    this.props.updateScene(id);
+    
+    { /* console.log(id); */ } 
+  }
 
     render()
     {
       	const {buttonIsClicked} = this.state;
-      	
+      	const scene = this.props.scene;
       	return (
         
         <View>
 
-          	{ /* <VideoPano source={this.state.src} playerState={this.state.playerState}/> */}
 
           	<View style={{
               	opacity: 1, transform : [{translate : [-3.72, -2, -1]}, {rotateY : 60}, { scale : 0.5 } ] 
@@ -56,9 +53,9 @@ class VideoButton extends React.Component
           	{ /* Video 1 GazeButton */}
 
           	<View style={{
-              	opacity: 1, transform : [{translate : [-3.72, -2, -1]}, {rotateY : 60}, { scale : 0.5 } ] 
+              	opacity: 1, transform : [{translate : [-3.72, 3.68, -1]}, {rotateY : 60}, { scale : 0.5 } ] 
               	}}>
-              <GazeButton onClick={() => this.toggleSrc("video1")} duration={2000}>
+              <GazeButton  onClick={() => this.CurrentScene("video1", '360_videos/puppies.webm', 2)} duration={2000} updateScene={this.props.updateScene} scene={this.props.scene}>
               {time => (
                 	<Image style={{width:4, height:1.5}}
                	 		source={{uri:'../static_assets/buttons/gaze-square.jpg'}}>
@@ -73,7 +70,7 @@ class VideoButton extends React.Component
           		style={{
               		opacity: 1, transform : [{translate : [-2, 2.185, -2]}, {rotateY : 0}, { scale : 0.5 } ] 
               	}}>
-              	<GazeButton onClick={() => this.toggleSrc("video2")} duration={2000}>
+              	<GazeButton updateScene={this.props.updateScene} scene={this.props.scene} onClick={() => this.CurrentScene("video2", '360_videos/kittens.webm', 2)} duration={2000}>
               	{time => (
                 	<Image style={{width:4, height:1.5}}
                 		source={{uri:'../static_assets/buttons/gaze-square.jpg'}}>
@@ -88,7 +85,7 @@ class VideoButton extends React.Component
           		style={{
               		opacity: 1, transform : [{translate : [-0.285, 3.68, -1]}, {rotateY : -60}, { scale : 0.5 } ] 
               	}}>
-              	<GazeButton onClick={() => this.toggleSrc("video3")} duration={2000}>
+              	<GazeButton updateScene={this.props.updateScene} scene={this.props.scene} onClick={() => this.CurrentScene("video3", '360_videos/monkeys.webm', 2)} duration={2000}>
               	{time => (
                 	<Image style={{width:4, height:1.5}}
                 		source={{uri:'../static_assets/buttons/gaze-square.jpg'}}>

@@ -1,12 +1,12 @@
 import React from 'react';
 import
 {
-  AppRegistry,
   asset,
   Pano,
   View,
   Model,
 } from 'react-vr';
+import VideoButton from './VideoButton.js';
 
 
 class MainMenu extends React.Component
@@ -27,7 +27,7 @@ class MainMenu extends React.Component
         
         <View>
             <Pano source={asset('360_images/main-menu.jpg')}/>
-
+            <VideoButton updateScene={this.props.updateScene} scene={this.props.scene} />
           	{ /* Video 1 Screen */}
 
           	<Model 
