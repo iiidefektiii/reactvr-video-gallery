@@ -10,10 +10,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "node-modules": "^1.0.1",
     "ovrui": "~2.0.0",
     "react": "16.0.0",
     "react-native": "~0.48.0",
+    "react-native-cli": "^2.0.1",
     "react-vr": "~2.0.0",
+    "react-vr-cli": "^0.3.6",
     "react-vr-gaze-button": "^0.1.4",
     "react-vr-web": "~2.0.0",
     "simple-raycaster": "^1.0.1",
