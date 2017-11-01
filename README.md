@@ -31,3 +31,8 @@ static_assets/
 index.vr.js
 vr/client.js
 ```
+
+### Up to Date Working Exmaple
+```
+https://reactvr-video-gallery.deadicatedgames.com/
+```
