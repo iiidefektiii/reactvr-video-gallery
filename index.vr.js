@@ -15,22 +15,17 @@ export default class reactvr_video_gallery extends React.Component
     	super();
     	this.state={
     		mainMenu: true,
-      	};
+      };
   	}
 
-  	updateScene(scene) {
-  		if(scene === 1) {
+  	updateScene(sceneID) {
+  		if(sceneID === 1) {
   			this.setState({mainMenu: true});
-  			{ /* console.log("Scene 1"); */ }
   		}
-  		if(scene === 2) {
+  		if(sceneID === 2) {
    			this.setState({mainMenu: false})
-   			{ /* console.log("Scene 2"); */ }
   		}
-  		
-  		{ /* console.log(this.state.mainMenu); */ }
-      }
-
+    }
 
     render() {
     const mainMenu = this.state.mainMenu;
@@ -39,13 +34,12 @@ export default class reactvr_video_gallery extends React.Component
       <View>
             
 	      {mainMenu ? (
-	        <MainMenu updateScene={this.updateScene.bind(this)}/>
+	        <MainMenu updateScene={this.updateScene.bind(this)} sceneID={2}/>
 	      ) : (
-	        <VideoPlayer updateScene={this.updateScene.bind(this)}/>
+	        <VideoPlayer updateScene={this.updateScene.bind(this)} sceneID={2}/>
 	      )}
 
       </View>
-
     );
   }
 }
