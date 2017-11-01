@@ -3,7 +3,6 @@ import
 {
   View,
   Image,
-  VideoControl
 } from 'react-vr';
 import GazeButton from 'react-vr-gaze-button';
 import SceneHelper from './helpers/SceneHelper';

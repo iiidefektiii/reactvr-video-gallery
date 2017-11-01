@@ -36,7 +36,7 @@ export default class reactvr_video_gallery extends React.Component
 	      {mainMenu ? (
 	        <MainMenu updateScene={this.updateScene.bind(this)} sceneID={2}/>
 	      ) : (
-	        <VideoPlayer updateScene={this.updateScene.bind(this)} sceneID={2}/>
+	        <VideoPlayer updateScene={this.updateScene.bind(this)} sceneID={1}/>
 	      )}
 
       </View>
