@@ -5,7 +5,7 @@ import
   Image,
 } from 'react-vr';
 import GazeButton from 'react-vr-gaze-button';
-import SceneHelper from './helpers/SceneHelper';
+import SceneHelper from './elements/helpers/SceneHelper';
 
 class VideoButton extends React.Component {
   constructor() {

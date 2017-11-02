@@ -4,11 +4,12 @@ import
   asset,
   VideoPano,
   View,
+  Image,
   MediaPlayerState,
   VideoControl
 } from 'react-vr';
 import UIButton from './elements/UIButton';
-import SceneHelper from './helpers/SceneHelper';
+import SceneHelper from './elements/helpers/SceneHelper';
 
 class VideoPlayer extends React.Component
 {
@@ -26,11 +27,15 @@ class VideoPlayer extends React.Component
 
         <VideoPano source={this.state.videoSrc} playerState={this.state.playerState} />
 
-
-
-        <View style={{ opacity: 0.999, transform : [{rotateX: -90}, {translate : [-1.5, 2, -3]}] }} >
-          <UIButton updateScene={this.props.updateScene} sceneID={1} widthHeight={1} image={asset('buttons/home-icon.png')} />
+        <View>
+          <VideoControl style={{ transform : [{rotateX: -45}, {rotateY: 0}, {rotateZ: 0}, {scale: 1}, {translate : [-2, 1, -3]} ], height: 0.2, width: 4}} playerState={this.state.playerState} />
         </View>
+
+        <View style={{ opacity: 0, transform : [{rotateX: -45}, {rotateY: 0}, {rotateZ: 0}, {translate : [-0.61, 0.475, -3]} ] }} >
+          <UIButton updateScene={this.props.updateScene} sceneID={1} widthHeight={1} source={asset('buttons/gaze-square.jpg')} />
+        </View>
+
+        <Image style={{ transform : [{rotateX: -45}, {translate : [-0.7, 1.25, -2.8]}, {scale: 1} ], width: 1.15, height :1.15 }} source={ asset('buttons/home-icon.png') } />
 
       </View>
     );
@@ -39,8 +44,6 @@ class VideoPlayer extends React.Component
 
 module.exports = VideoPlayer;
 
-{ /* 
-        <View style={{ opacity: 1, transform : [{translate : [0, 0, -1]}, {rotateY : 0}, { scale : 0.5 } ] }} >
-          <VideoControl style={{height: 0.2, width: 4}} playerState={this.state.playerState} />
-        </View>
+{/*
+        <VideoControl style={{ transform : [{rotateX: -90}, {rotateY: 0}, {rotateZ: 0}, {translate : [-2, 2.4, -3]} ], height: 0.2, width: 4}} playerState={this.state.playerState} />
 */}

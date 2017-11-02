@@ -7,7 +7,6 @@ import
 } from 'react-vr';
 import MainMenu from './components/scenes/MainMenu.js';
 import VideoPlayer from './components/scenes/VideoPlayer.js';
-import VideoButton from './components/scenes/VideoButton.js';
 
 export default class reactvr_video_gallery extends React.Component
 {

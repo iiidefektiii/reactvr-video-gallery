@@ -26,13 +26,11 @@ class UIButton extends React.Component {
 
       <View>
 
-
-          <GazeButton onClick={() => this.ReturnHome(this.props.sceneID)} duration={2000} updateScene={this.props.updateScene} sceneID={this.props.sceneID}>
-          {time => (
-            	<Image style={{ width: this.props.widthHeight, height: this.props.widthHeight}} source={this.props.image} />
-          	)}
-          	</GazeButton>
-
+        <GazeButton onClick={() => this.ReturnHome(this.props.sceneID)} duration={3000} updateScene={this.props.updateScene} sceneID={this.props.sceneID}>
+        {time => (
+          	<Image style={{ width: this.props.widthHeight, height: this.props.widthHeight}} source={this.props.source} />
+        	)}
+        </GazeButton>
 
       </View>
     );
